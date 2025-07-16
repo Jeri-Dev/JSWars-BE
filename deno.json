@@ -1,0 +1,40 @@
+{
+  "fmt": {
+    "semiColons": false
+  },
+  "tasks": {
+    "dev": "DENO_ENV=DEVELOPMENT deno run -A --watch src/main.ts"
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["no-sloppy-imports", "no-explicit-any"]
+    }
+  },
+  "imports": {
+    "dongoose": "https://deno.land/x/dongoose@1.0.2/mod.ts",
+    "@/": "./src/",
+    "@nestjs/core": "npm:@nestjs/core@^11.0.11",
+    "@nestjs/common": "npm:@nestjs/common@^11.0.11",
+    "@nestjs/swagger": "npm:@nestjs/swagger@^4.7.0",
+    "@nestjs/platform-express": "npm:@nestjs/platform-express@^11.0.11",
+    "@std/assert": "jsr:@std/assert@1",
+    "colors": "npm:colors@^1.4.0",
+    "@modules/": "./src/modules/",
+    "@config/": "./src/config/",
+    "@database/": "./src/database/",
+    "@interfaces/": "./src/interfaces/",
+    "@shared/": "./src/shared/",
+    "@messages/": "./src/messages/",
+    "@errors/": "./src/errors/",
+    "@models/": "./src/models/",
+    "@nestjs/websockets": "npm:@nestjs/websockets",
+    "@nestjs/serve-static": "npm:@nestjs/serve-static",
+    "swagger-ui-express" : "npm:swagger-ui-express@^4.6.2"
+  },
+  "unstable": ["kv"],
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
