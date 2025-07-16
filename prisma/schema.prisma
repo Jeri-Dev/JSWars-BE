@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client"
-  output   = "../src/database/prisma"
+  output   = "../src/database"
   runtime  = "deno"
 }
 

@@ -9,11 +9,10 @@
   },
   "lint": {
     "rules": {
-      "exclude": ["no-sloppy-imports", "no-explicit-any"]
+      "exclude": ["no-sloppy-imports"]
     }
   },
   "imports": {
-    "@prisma/client": "npm:@prisma/client@^6.12.0",
     "dongoose": "https://deno.land/x/dongoose@1.0.2/mod.ts",
     "@/": "./src/",
     "@nestjs/core": "npm:@nestjs/core@^11.0.11",
@@ -32,9 +31,9 @@
     "@models/": "./src/models/",
     "@nestjs/websockets": "npm:@nestjs/websockets",
     "@nestjs/serve-static": "npm:@nestjs/serve-static",
-    "swagger-ui-express": "npm:swagger-ui-express@^4.6.2"
+    "@database": "./src/database/client.ts"
   },
-  "unstable": ["kv"],
+  "unstable": ["kv", "sloppy-imports"],
   "nodeModulesDir": "auto",
   "compilerOptions": {
     "experimentalDecorators": true,

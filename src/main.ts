@@ -7,7 +7,7 @@ import { NestFactory } from "@nestjs/core"
 import colors from "colors"
 
 const module = await NestFactory.create(AppModule, {
-  logger: ["error", "warn"],
+	logger: ["error", "warn"],
 })
 
 const app = module as INestApplication
@@ -19,5 +19,5 @@ loggerSetup(app)
 await app.listen(PORT)
 
 console.log(
-  colors.yellow(`[APP] Server is running on in http://localhost:${PORT}`),
+	colors.yellow(`[APP] Server is running on in http://localhost:${PORT}`),
 )
