@@ -1,8 +1,8 @@
-import { PUBLIC_ASSETS_PATH } from '@config/constants.ts';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { AppErrorFilter } from '@/app-error.filter.ts';
-import { APP_FILTER } from '@nestjs/core';
-import { Module } from '@nestjs/common';
+import { PUBLIC_ASSETS_PATH } from "@config/constants.ts"
+import { ServeStaticModule } from "@nestjs/serve-static"
+import { AppErrorFilter } from "@/app-error.filter.ts"
+import { APP_FILTER } from "@nestjs/core"
+import { Module } from "@nestjs/common"
 
 @Module({
   imports: [

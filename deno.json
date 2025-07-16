@@ -29,7 +29,7 @@
     "@models/": "./src/models/",
     "@nestjs/websockets": "npm:@nestjs/websockets",
     "@nestjs/serve-static": "npm:@nestjs/serve-static",
-    "swagger-ui-express" : "npm:swagger-ui-express@^4.6.2"
+    "swagger-ui-express": "npm:swagger-ui-express@^4.6.2"
   },
   "unstable": ["kv"],
   "nodeModulesDir": "auto",
