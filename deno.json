@@ -3,7 +3,9 @@
     "semiColons": false
   },
   "tasks": {
-    "dev": "DENO_ENV=DEVELOPMENT deno run -A --watch src/main.ts"
+    "dev": "DENO_ENV=DEVELOPMENT deno run -A --watch src/main.ts",
+    "db:gen" : "deno run -A npm:prisma generate",
+    "db:push" : "deno run -A npm:prisma db push"
   },
   "lint": {
     "rules": {
@@ -11,6 +13,7 @@
     }
   },
   "imports": {
+    "@prisma/client": "npm:@prisma/client@^6.12.0",
     "dongoose": "https://deno.land/x/dongoose@1.0.2/mod.ts",
     "@/": "./src/",
     "@nestjs/core": "npm:@nestjs/core@^11.0.11",
