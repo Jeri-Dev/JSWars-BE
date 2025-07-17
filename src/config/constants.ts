@@ -3,3 +3,5 @@ export const APP_SWAGGER_URL = "/"
 export const APP_NAME = "JS Battle"
 export const ROOT_PATH = Deno.cwd()
 export const PUBLIC_ASSETS_PATH = path.join(ROOT_PATH, "public")
+
+export const APP_SIZE_LIMIT_UPLOAD = "100mb"

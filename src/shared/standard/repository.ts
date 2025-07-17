@@ -6,10 +6,7 @@ type SelectFields<T> = Partial<Record<keyof T, boolean>>
 
 interface PrismaDelegate<T> {
 	create: (args: { data: any }) => Promise<T>
-	createMany: (args: {
-		data: any[]
-		skipDuplicates?: boolean
-	}) => Promise<{ count: number }>
+
 	findFirst: (args?: {
 		where?: any
 		orderBy?: any
@@ -21,14 +18,7 @@ interface PrismaDelegate<T> {
 		select?: any
 		include?: any
 	}) => Promise<T | null>
-	findMany: (args?: {
-		where?: unknown
-		orderBy?: any
-		select?: any
-		include?: any
-		skip?: number
-		take?: number
-	}) => Promise<T[]>
+
 	count: (args?: { where?: any }) => Promise<number>
 	update: (args: { where: any; data: any }) => Promise<T>
 	delete: (args: { where: any }) => Promise<T>
@@ -115,16 +105,13 @@ export class StandardRepository<
 		return this.model.create({ data })
 	}
 
-	async createMany(data: CleanInput<T>[]): Promise<{ count: number }> {
-		return this.model.createMany({ data, skipDuplicates: true })
-	}
-
 	async findOne(where: WhereCondition<T>): Promise<T | null> {
 		return this.model.findFirst({ where })
 	}
 
 	async getAll(select?: SelectFields<T>): Promise<T[]> {
-		return this.model.findMany(select ? { select } : {})
+		const model = this.model as any
+		return model.findMany(select ? { select } : {})
 	}
 
 	async findLatestQuery(where: WhereCondition<T>): Promise<T | null> {
@@ -135,7 +122,8 @@ export class StandardRepository<
 	}
 
 	async findByIds(ids: string[], select?: SelectFields<T>): Promise<T[]> {
-		return this.model.findMany({
+		const model = this.model as any
+		return model.findMany({
 			where: { id: { in: ids } } as any,
 			...(select ? { select } : {}),
 		})
@@ -150,15 +138,26 @@ export class StandardRepository<
 	}
 
 	async findAll(): Promise<T[]> {
-		return this.model.findMany()
+		const model = this.model as any
+		return model.findMany()
 	}
 
 	async findQuery(where: WhereCondition<T>): Promise<T[]> {
-		return this.model.findMany({ where })
+		const model = this.model as any
+		return model.findMany({ where })
 	}
 
 	async getCount(where?: WhereCondition<T>): Promise<number> {
 		return this.model.count({ where })
+	}
+
+	async findOrQuery(where: Partial<T>[]): Promise<T | null> {
+		const model = this.model
+		return model.findFirst({
+			where: {
+				OR: where,
+			},
+		})
 	}
 
 	async update(id: string, data: CleanInput<T>): Promise<T | null> {
@@ -284,10 +283,11 @@ export class StandardRepository<
 		}
 
 		const finalTake = extensionTake !== undefined ? extensionTake : max
+		const model = this.model as any
 
 		const [total, data] = await Promise.all([
-			this.model.count({ where: combinedWhere }),
-			this.model.findMany({
+			model.count({ where: combinedWhere }),
+			model.findMany({
 				...baseQuery,
 				skip,
 				take: finalTake,

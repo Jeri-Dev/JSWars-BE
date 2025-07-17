@@ -1,0 +1,33 @@
+{
+  "ERROR_DATABASE_MESSAGE": "Error al buscar en la base de datos",
+  "ERROR_DECRYPT_MESSAGE": "Error al desencriptar",
+  "UNESPECTED_ERROR": "Ha ocurrido un error inesperado",
+  "ERROR_EXTERNAL_SERVICE": "Error al consumir el servicio externo",
+  "ERROR_HASH_MESSAGE": "Error al encriptar",
+  "ERROR_SEND_EMAIL": "Error al enviar el correo electrónico",
+  "ERROR_PARSE_TEMPLATE": "Error al parsear la plantilla",
+  "ERROR_UPLOAD_IMAGE": "Error al subir la imagen",
+  "FILE_REQUIRED": "El archivo es requerido",
+  "FILE_EMPTY": "El archivo no puede estar vacio",
+  "FILE_UPLOADED": "El archivo se subió correctamente",
+  "FILES_UPLOADED": "Los archivos se subieron correctamente",
+  "SYSTEM_TEXT": "Sistema",
+  "PAGINATION": {
+    "PAGE_NUMBER": "El número de página debe ser un número valido",
+    "MAX_NUMBER": "El número de maximo de registros por página debe ser un número valido",
+    "SEARCH_STRING": "La cadena de busqueda debe ser un string valido",
+    "START_DATE": "La fecha de inicio debe ser una fecha valida",
+    "END_DATE": "La fecha de fin debe ser una fecha valida",
+    "SORT_ORDER": "El orden de ordenamiento debe ser un string valido (asc|desc)"
+  },
+  "YES": "Si",
+  "NOT": "No",
+  "STATUS": "Estatus",
+  "USER_REVIEW": "Usuario de Revisión",
+  "REAZON_DECLINED": "Motivo de rechazo",
+  "USER_REVIEW_DATE": "Fecha de Revisión",
+  "TYPE_INVALID" : "Tipo de parametro invalido",
+  "ROLE_NOT_FOUND": "Rol no encontrado",
+  "SOCKET_ERROR": "Error de socket en el servidor",
+  "PREFERENCES_NOT_FOUND": "Preferencias no encontradas"
+}

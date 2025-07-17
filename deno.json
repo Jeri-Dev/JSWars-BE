@@ -13,6 +13,8 @@
     }
   },
   "imports": {
+    "@nestjs/class-validator": "npm:@nestjs/class-validator@^0.13.4",
+    "@prisma/client": "npm:@prisma/client@^6.12.0",
     "dongoose": "https://deno.land/x/dongoose@1.0.2/mod.ts",
     "@/": "./src/",
     "@nestjs/core": "npm:@nestjs/core@^11.0.11",
@@ -37,6 +39,7 @@
   "nodeModulesDir": "auto",
   "compilerOptions": {
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization" : false
   }
 }

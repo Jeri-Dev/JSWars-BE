@@ -5,6 +5,7 @@ import { PORT } from "@config/enviroments.ts"
 import { AppModule } from "@/app.module.ts"
 import { NestFactory } from "@nestjs/core"
 import colors from "colors"
+import { parserSetup } from "@config/parser.ts"
 
 const module = await NestFactory.create(AppModule, {
 	logger: ["error", "warn"],
@@ -16,6 +17,7 @@ app.setGlobalPrefix("api")
 
 swaggerSetup(app)
 loggerSetup(app)
+parserSetup(app)
 await app.listen(PORT)
 
 console.log(

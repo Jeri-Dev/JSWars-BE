@@ -1,0 +1,22 @@
+{
+  "ERROR_USER_NOT_CHANGE_TEMP_PASSWORD": "No puede cambiar el estado de un usuario que no ha cambiado su contraseña temporal",
+  "ERROR_USER_NOT_CHANGE_PASSWORD": "No puede cambiar el la contraseña de un usuario que ya ha cambiado su contraseña temporal",
+  "SUCCESS_TOGGLE_USER_STATUS": "Estado del usuario cambiado con éxito",
+  "ERROR_USER_NOT_EDIT_YOURSELF": "No puedes editar tu propio usuario",
+  "SUCCESS_GET_USERS_LIST": "Lista de usuarios recuperada con éxito",
+  "SUCCESS_GET_USER": "Usuario recuperado con éxito",
+  "ERROR_USER_NOT_FOUND": "Usuario no encontrado",
+  "USER_EMAIL_ALREADY_EXISTS": "El email ya esta en uso",
+  "USER_DOCUMENT_ALREADY_EXISTS": "La cedula ya esa en uso",
+  "USER_PHONE_ALREADY_EXISTS": "El numero de telefono ya esta en uso",
+  "SUCCESS_CREATE_USER": "Usuario creado con éxito",
+  "SUCCESS_UPDATE_USER": "Usuario actualizado con éxito",
+  "SUCCESS_UPDATE_USER_PREFERENCES": "Preferencias de usuario actualizadas con éxito",
+  "SUCCESS_GET_USERS_FOR_BRANCHES": "Lista de usuarios recuperada con éxito",
+  "SUBJECT_EMAIL_VERIFICATION": "MotionCue - Verificación de cuenta",
+  "USER_IS_VERIFIED": "El usuario ya ha sido verificado",
+  "SUCCESS_GET_ROLES": "Roles recuperados con éxito",
+  "USER_NAME_ALREADY_EXISTS": "El nombre de usuario ya esta en uso",
+  "USER_NAME_ERROR": "El nombre de usuario debe tener entre 3 a 15 caracteres y no tener caracteres especiales"
+
+}

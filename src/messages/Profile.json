@@ -1,0 +1,11 @@
+{
+  "SUCCESS_GET_PROFILE": "Perfil obtenido exitosamente.",
+  "SYSTEM": "Sistema",
+  "ERROR_GET_PROFILE": "Error al obtener el perfil.",
+  "ERROR_PASSWORD_CONFIRM": "La contraseña de confirmación no coincide con la contraseña",
+  "ERROR_PASSWORD_SAME": "La nueva contraseña no puede ser la misma que la contraseña actual",
+  "ERROR_PASSWORD_NOT_UPDATE": "Error al actualizar la contraseña",
+  "SUCCESS_PASSWORD_UPDATE": "Contraseña actualizada con éxito",
+  "ERROR_PASSWORD_NOT_MATCH": "La contraseña actual no coincide con la contraseña de su cuenta",
+  "SUCCESS_GET_PREFERENCES": "Preferencias recuperadas con éxito"
+}
