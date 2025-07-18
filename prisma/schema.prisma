@@ -20,5 +20,82 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  // Friends relationships
+  sentFriendRequests     Friendship[] @relation("SentFriendRequests")
+  receivedFriendRequests Friendship[] @relation("ReceivedFriendRequests")
+
+  // Wars relationships
+  warsAsCreator    War[]            @relation("WarCreator")
+  warParticipants  WarParticipant[]
+
   @@map("users")
+}
+
+model Friendship {
+  id         String           @id @default(auto()) @map("_id") @db.ObjectId
+  requesterId String           @db.ObjectId
+  addresseeId String           @db.ObjectId
+  status     FriendshipStatus @default(PENDING)
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+
+  requester User @relation("SentFriendRequests", fields: [requesterId], references: [id])
+  addressee User @relation("ReceivedFriendRequests", fields: [addresseeId], references: [id])
+
+  @@unique([requesterId, addresseeId])
+  @@map("friendships")
+}
+
+model Battle {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  problem     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  wars War[]
+
+  @@map("battles")
+}
+
+model War {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  battleId String    @db.ObjectId
+  status   WarStatus @default(IN_PROGRESS)
+  winner   String?
+  code     String?
+  createdBy String   @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  battle       Battle           @relation(fields: [battleId], references: [id])
+  creator      User             @relation("WarCreator", fields: [createdBy], references: [id])
+  participants WarParticipant[]
+
+  @@map("wars")
+}
+
+model WarParticipant {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  warId  String @db.ObjectId
+  userId String @db.ObjectId
+  points Int    @default(0)
+
+  war  War  @relation(fields: [warId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([warId, userId])
+  @@map("war_participants")
+}
+
+enum FriendshipStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum WarStatus {
+  IN_PROGRESS
+  FINISHED
 }

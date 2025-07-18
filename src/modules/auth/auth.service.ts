@@ -7,6 +7,8 @@ import { AuthError } from "@errors/auth.error.ts"
 import { compareHash, hashString } from "@shared/functions/hash.ts"
 import { validatePassword } from "@shared/utils/validatePassword.ts"
 import { LoginDto } from "./dto/login.dto.ts"
+import { createToken } from "@shared/functions/jwt.ts"
+import { TOKEN_DESTINATION } from "@config/constants.ts"
 
 @Injectable()
 export class AuthService {
@@ -101,5 +103,29 @@ export class AuthService {
 		const [errorPasswordMatch] = await tryCatch(() =>
 			compareHash({ hash: userFound.password, plain: password }),
 		)
+
+		if (errorPasswordMatch) {
+			throw this.authError.invalidCredentials()
+		}
+
+		const [errorToken, token] = await tryCatch(() =>
+			createToken({
+				destination: TOKEN_DESTINATION.AUTH,
+				payload: {
+					id: userFound.id,
+					userName: userFound.userName,
+					email: userFound.email,
+				},
+				time: 30 * 24 * 60 * 60 * 1000,
+			}),
+		)
+
+		console.log(token)
+
+		if (errorToken) {
+			throw this.generalError.internalServerError()
+		}
+
+		return token
 	}
 }

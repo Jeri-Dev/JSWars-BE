@@ -1,0 +1,13 @@
+{
+  "WAR_NOT_FOUND": "Guerra no encontrada",
+  "WAR_ALREADY_FINISHED": "La guerra ya ha terminado",
+  "ALREADY_PARTICIPATING": "Ya estás participando en esta guerra",
+  "NOT_PARTICIPATING": "No estás participando en esta guerra",
+  "UNAUTHORIZED": "No autorizado para realizar esta acción",
+  "BATTLE_NOT_FOUND": "Batalla no encontrada",
+  "MINIMUM_PARTICIPANTS_REQUIRED": "Se requieren al menos 2 participantes para iniciar una guerra",
+  "WAR_CREATED_SUCCESS": "Guerra creada con éxito",
+  "WAR_JOINED_SUCCESS": "Te has unido a la guerra con éxito",
+  "POINTS_UPDATED_SUCCESS": "Puntos actualizados con éxito",
+  "WAR_FINISHED_SUCCESS": "Guerra terminada con éxito"
+}

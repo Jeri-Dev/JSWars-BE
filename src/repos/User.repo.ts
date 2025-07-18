@@ -8,7 +8,7 @@ export class UserRepository extends StandardRepository<
 	User,
 	PrismaService["user"]
 > {
-	constructor(prisma: PrismaService) {
+	constructor(private readonly prisma: PrismaService) {
 		super(prisma.user)
 	}
 }

@@ -6,4 +6,5 @@ import { HttpStatus, Injectable } from "@nestjs/common"
 export class GeneralError {
 	internalServerError = AppError.build(HttpStatus.INTERNAL_SERVER_ERROR, GENERAL.ERROR_DATABASE_MESSAGE)
 	hashError = AppError.build(HttpStatus.INTERNAL_SERVER_ERROR, GENERAL.ERROR_HASH_MESSAGE)
+        
 }

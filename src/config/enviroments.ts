@@ -8,3 +8,5 @@ export const APP_HOST = Deno.env.get("APP_HOST")
 export const DENO_ENV =
 	Deno.env.get("DENO_ENV") ||
 	("DEVELOPMENT" as "DEVELOPMENT" | "PRODUCTION" | "TEST")
+
+export const JWT_SECRET = Deno.env.get("JWT_SECRET")

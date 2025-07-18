@@ -16,11 +16,13 @@ export class ResponseInterceptor implements NestInterceptor {
 		return next.handle().pipe(
 			tap((data) => {
 				if (response.statusCode >= 200 && response.statusCode < 300) {
-					return Array.isArray(data)
-						? {
-								result: data,
-						  }
-						: data
+					const result: Record<string, unknown> = {
+						status: response.statusCode,
+						error: false,
+						result: data,
+					}
+
+					return response.json(result)
 				}
 			}),
 		)

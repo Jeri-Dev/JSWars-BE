@@ -17,6 +17,15 @@
   "USER_IS_VERIFIED": "El usuario ya ha sido verificado",
   "SUCCESS_GET_ROLES": "Roles recuperados con éxito",
   "USER_NAME_ALREADY_EXISTS": "El nombre de usuario ya esta en uso",
-  "USER_NAME_ERROR": "El nombre de usuario debe tener entre 3 a 15 caracteres y no tener caracteres especiales"
+  "USER_NAME_ERROR": "El nombre de usuario debe tener entre 3 a 15 caracteres y no tener caracteres especiales",
+  "INVALID_OLD_PASSWORD": "La contraseña actual es incorrecta",
+  "PASSWORD_CHANGED_SUCCESS": "Contraseña cambiada con éxito",
+  "PROFILE_UPDATED_SUCCESS": "Perfil actualizado con éxito",
+  "PICTURE_UPDATED_SUCCESS": "Imagen de perfil actualizada con éxito",
+  "AVATAR_UPDATED_SUCCESS": "Avatar actualizado con éxito",
+  "INVALID_FILE_TYPE": "Tipo de archivo no válido. Solo se permiten imágenes JPG, JPEG, PNG y GIF",
+  "FILE_TOO_LARGE": "El archivo es demasiado grande. El tamaño máximo es 5MB"
+  
+  
 
 }

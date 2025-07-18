@@ -1,0 +1,13 @@
+{
+  "USER_NOT_FOUND": "Usuario no encontrado",
+  "CANNOT_SEND_TO_SELF": "No puedes enviarte una solicitud de amistad a ti mismo",
+  "FRIENDSHIP_ALREADY_EXISTS": "La amistad ya existe o la solicitud ya fue enviada",
+  "FRIEND_REQUEST_NOT_FOUND": "Solicitud de amistad no encontrada",
+  "FRIEND_REQUEST_ALREADY_RESPONDED": "La solicitud de amistad ya fue respondida",
+  "FRIENDSHIP_NOT_FOUND": "Amistad no encontrada",
+  "UNAUTHORIZED": "No autorizado para realizar esta acción",
+  "FRIEND_REQUEST_SENT_SUCCESS": "Solicitud de amistad enviada con éxito",
+  "FRIEND_REQUEST_ACCEPTED_SUCCESS": "Solicitud de amistad aceptada con éxito",
+  "FRIEND_REQUEST_REJECTED_SUCCESS": "Solicitud de amistad rechazada con éxito",
+  "FRIEND_REMOVED_SUCCESS": "Amigo eliminado con éxito"
+}

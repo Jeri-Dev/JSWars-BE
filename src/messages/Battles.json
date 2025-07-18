@@ -1,0 +1,8 @@
+{
+  "BATTLE_NOT_FOUND": "Batalla no encontrada",
+  "BATTLE_NAME_EXISTS": "Ya existe una batalla con ese nombre",
+  "UNAUTHORIZED": "No autorizado para realizar esta acción",
+  "BATTLE_CREATED_SUCCESS": "Batalla creada con éxito",
+  "BATTLE_UPDATED_SUCCESS": "Batalla actualizada con éxito",
+  "BATTLE_DELETED_SUCCESS": "Batalla eliminada con éxito"
+}
