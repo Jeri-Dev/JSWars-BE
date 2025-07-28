@@ -17,6 +17,8 @@ model User {
   email     String   @unique
   password  String
   picture   String?
+  biography String?
+  tags      String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -51,27 +53,29 @@ model Battle {
   name        String
   description String
   problem     String
+  warId       String?  @db.ObjectId
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  wars War[]
+  war War? @relation(fields: [warId], references: [id])
 
   @@map("battles")
 }
 
 model War {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  battleId String    @db.ObjectId
-  status   WarStatus @default(IN_PROGRESS)
-  winner   String?
-  code     String?
-  createdBy String   @db.ObjectId
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  status      WarStatus @default(IN_PROGRESS)
+  winner      String?
+  code        String?
+  createdBy   String    @db.ObjectId
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 
-  battle       Battle           @relation(fields: [battleId], references: [id])
   creator      User             @relation("WarCreator", fields: [createdBy], references: [id])
   participants WarParticipant[]
+  battles      Battle[]
 
   @@map("wars")
 }
