@@ -10,36 +10,38 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  userName  String   @unique
-  firstName String
-  lastName  String
-  email     String   @unique
-  password  String
-  picture   String?
-  biography String?
-  tags      String[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  userName         String   @unique
+  firstName        String
+  lastName         String
+  email            String   @unique
+  password         String
+  picture          String?
+  biography        String?
+  tags             String[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  securityQuestion String
+  securityAnswer   String
 
   // Friends relationships
   sentFriendRequests     Friendship[] @relation("SentFriendRequests")
   receivedFriendRequests Friendship[] @relation("ReceivedFriendRequests")
 
   // Wars relationships
-  warsAsCreator    War[]            @relation("WarCreator")
-  warParticipants  WarParticipant[]
+  warsAsCreator   War[]            @relation("WarCreator")
+  warParticipants WarParticipant[]
 
   @@map("users")
 }
 
 model Friendship {
-  id         String           @id @default(auto()) @map("_id") @db.ObjectId
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
   requesterId String           @db.ObjectId
   addresseeId String           @db.ObjectId
-  status     FriendshipStatus @default(PENDING)
-  createdAt  DateTime         @default(now())
-  updatedAt  DateTime         @updatedAt
+  status      FriendshipStatus @default(PENDING)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
 
   requester User @relation("SentFriendRequests", fields: [requesterId], references: [id])
   addressee User @relation("ReceivedFriendRequests", fields: [addresseeId], references: [id])

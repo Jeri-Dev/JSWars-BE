@@ -36,7 +36,6 @@ export class AuthService {
 			]),
 		)
 		if (errorSearchUser) {
-			console.log(errorSearchUser)
 			throw this.generalError.internalServerError()
 		}
 
@@ -61,7 +60,6 @@ export class AuthService {
 		)
 
 		if (errorHashPassword) {
-			console.log(errorHashPassword)
 			throw this.generalError.internalServerError()
 		}
 
@@ -73,7 +71,6 @@ export class AuthService {
 		)
 
 		if (errorCreateUser) {
-			console.log(errorCreateUser)
 			throw this.generalError.internalServerError()
 		}
 
@@ -119,8 +116,6 @@ export class AuthService {
 				time: 30 * 24 * 60 * 60 * 1000,
 			}),
 		)
-
-		console.log(token)
 
 		if (errorToken) {
 			throw this.generalError.internalServerError()
